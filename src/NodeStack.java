@@ -2,6 +2,7 @@ import java.util.NoSuchElementException;
 
 public class NodeStack implements StackI {
     private Node top;
+    private int currentSize = 0;
 
 
     public NodeStack(int size) {
@@ -14,6 +15,7 @@ public class NodeStack implements StackI {
         newNode.data = element;
         newNode.next = top;
         top = newNode;
+        currentSize++;
     }
 
     @Override
@@ -21,25 +23,28 @@ public class NodeStack implements StackI {
         if (top == null) {
             throw new NoSuchElementException();
         }
-        Node oldTop = top;
-        Node newTop = top.next;
-        top = newTop;
-        return oldTop.data;
+        Object data = top.data;
+        top = top.next;
+        currentSize--;
+        return data;
     }
 
     @Override
     public Object peek() {
-        return 0;
+       if (top == null) {
+           throw new NoSuchElementException();
+       }
+        return top.data;
     }
 
     @Override
     public int size() {
-        return 0;
+        return currentSize;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return top == null;
     }
 
     class Node {

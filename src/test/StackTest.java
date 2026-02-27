@@ -29,7 +29,7 @@ class StackTest
         // ARRANGE
         // --------------------------------------------------
 
-        this.stack = new NodeStack(5);
+        this.stack = new ArrayListStack(5);
 
         this.card1 = new Card("Spade", "Jack");
         this.card2 = new Card("Club", "2");
