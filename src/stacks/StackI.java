@@ -1,3 +1,5 @@
+package stacks;
+
 /**
  * A specification of a stack.
  */

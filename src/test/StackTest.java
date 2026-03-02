@@ -10,6 +10,8 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import stacks.ArrayListStack;
+import stacks.StackI;
 
 @TestMethodOrder(OrderAnnotation.class)
 class StackTest
